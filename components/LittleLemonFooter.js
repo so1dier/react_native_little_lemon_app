@@ -2,7 +2,7 @@ import { View, Text } from "react-native";
 
 export default function LittleLemonFooter() {
   return (
-    <View style={{ backgroundColor: "#A4CE15" }}>
+    <View style={{ backgroundColor: "#EE9972" }}>
       <Text
         style={{
           fontSize: 20,

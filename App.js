@@ -7,16 +7,18 @@ import LittleLemonHeaderThreeLines from "./components/LittleLemonHeaderThreeLine
 import WelcomeScreen from "./components/WelcomeScreen";
 import MenuItems from "./components/MenuItems";
 
+const black = "#333333";
 export default function App() {
   return (
     //<View style={styles.container}>
-    <View style={{ flex: 1, backgroundColor: "#495E57" }}>
+    <View style={{ flex: 1, backgroundColor: "#333333" }}>
       {/* <StatusBar style="auto" /> */}
-      <LittleLemonHeaderThreeLines />
+      {/* <LittleLemonHeaderThreeLines /> */}
+      <LittleLemonHeader />
       <WelcomeScreen />
       {/* <MenuItems /> */}
 
-      <View style={{ backgroundColor: "#495E57" }}>
+      <View style={{}}>
         <LittleLemonFooter />
       </View>
     </View>
