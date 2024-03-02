@@ -10,17 +10,13 @@ import MenuItems from "./components/MenuItems";
 export default function App() {
   return (
     //<View style={styles.container}>
-    <View style={{ flex: 1 }}>
-      <StatusBar style="auto" />
-      <View style={{ flex: 0.2 }}>
-        <LittleLemonHeaderThreeLines />
-      </View>
-      <View style={{ flex: 0.8, justifyContent: "flex-start" }}>
-        {/* <WelcomeScreen /> */}
-        <MenuItems />
-      </View>
+    <View style={{ flex: 1, backgroundColor: "#495E57" }}>
+      {/* <StatusBar style="auto" /> */}
+      <LittleLemonHeaderThreeLines />
+      <WelcomeScreen />
+      {/* <MenuItems /> */}
 
-      <View style={{ flex: 0.2, justifyContent: "flex-end" }}>
+      <View style={{ backgroundColor: "#495E57" }}>
         <LittleLemonFooter />
       </View>
     </View>
