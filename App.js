@@ -6,6 +6,8 @@ import LittleLemonFooter from "./components/LittleLemonFooter";
 import LittleLemonHeaderThreeLines from "./components/LittleLemonHeaderThreeLines";
 import WelcomeScreen from "./components/WelcomeScreen";
 import MenuItems from "./components/MenuItems";
+import FlatListMenuItems from "./components/FlatListMenuItems";
+import MenuItemsFlatList from "./components/MenuItemsFlatList";
 
 const black = "#333333";
 export default function App() {
@@ -15,8 +17,10 @@ export default function App() {
       {/* <StatusBar style="auto" /> */}
       {/* <LittleLemonHeaderThreeLines /> */}
       <LittleLemonHeader />
-      <WelcomeScreen />
+      {/* <WelcomeScreen /> */}
       {/* <MenuItems /> */}
+      {/* {<FlatListMenuItems />} */}
+      {<MenuItemsFlatList />}
 
       <View style={{}}>
         <LittleLemonFooter />
