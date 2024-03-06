@@ -48,6 +48,7 @@ export default function FeedbackForm() {
           value={feedbackMessage}
           onChangeText={onChangeFeedbackMessage}
           placeholder="Feedback Message"
+          multiline={true}
         />
         <TextInput
           style={styles.input}
