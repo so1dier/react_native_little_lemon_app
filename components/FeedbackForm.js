@@ -13,6 +13,8 @@ export default function FeedbackForm() {
   const [firstName, onChangeFirstName] = React.useState("");
   const [lastName, onChangeLastName] = React.useState("");
   const [feedbackMessage, onChangeFeedbackMessage] = React.useState("");
+  const [pnoheNumber, onPhoneNumberChange] = React.useState("");
+  const [email, onChangeEmail] = React.useState("");
 
   return (
     <KeyboardAvoidingView
@@ -32,17 +34,35 @@ export default function FeedbackForm() {
           style={styles.input}
           value={firstName}
           onChangeText={onChangeFirstName}
+          placeholder="First Name"
         ></TextInput>
         <TextInput
           style={styles.input}
           value={lastName}
           onChangeText={onChangeLastName}
+          placeholder="Last Name"
         />
+
         <TextInput
           style={styles.input}
           value={feedbackMessage}
           onChangeText={onChangeFeedbackMessage}
+          placeholder="Feedback Message"
         />
+        <TextInput
+          style={styles.input}
+          value={email}
+          onChangeText={onChangeEmail}
+          placeholder="Email"
+          keyboardType="email-address"
+        ></TextInput>
+        <TextInput
+          style={styles.input}
+          value={pnoheNumber}
+          onChangeText={onPhoneNumberChange}
+          placeholder="Phone number"
+          keyboardType="phone-pad"
+        ></TextInput>
       </ScrollView>
     </KeyboardAvoidingView>
   );
