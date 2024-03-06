@@ -30,6 +30,7 @@ export default function WelcomeScreen() {
           style={styles.input}
           input={name}
           onChangeText={onChangeTextName}
+          placeholder={"First name"}
         ></TextInput>
       </ScrollView>
     </KeyboardAvoidingView>
