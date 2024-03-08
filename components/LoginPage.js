@@ -1,5 +1,5 @@
-import * as React from "react";
-import { View, Text, TextInput, StyleSheet } from "react-native";
+import React, { useState } from "react";
+import { View, Text, TextInput, StyleSheet, Pressable } from "react-native";
 
 export default function LoginPage() {
   const [login, onChangeLogin] = React.useState("");
