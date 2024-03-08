@@ -10,6 +10,7 @@ import FlatListMenuItems from "./components/FlatListMenuItems";
 import MenuItemsFlatList from "./components/MenuItemsFlatList";
 import FeedbackForm from "./components/FeedbackForm";
 import LoginPage from "./components/LoginPage";
+import MenuItemsSectionList from "./components/MenuItemsSectionList";
 
 const black = "#333333";
 export default function App() {
@@ -24,7 +25,8 @@ export default function App() {
       {/* {<FlatListMenuItems />} */}
       {/* {<MenuItemsFlatList />} */}
       {/* {<FeedbackForm />} */}
-      {<LoginPage />}
+      {/* {<LoginPage />} */}
+      {<MenuItemsSectionList />}
 
       <View style={{}}>
         <LittleLemonFooter />
