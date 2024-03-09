@@ -1,15 +1,26 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, StyleSheet, Pressable } from "react-native";
+import {
+  ScrollView,
+  Text,
+  TextInput,
+  StyleSheet,
+  Pressable,
+} from "react-native";
 
 export default function LoginPage() {
   const [login, onChangeLogin] = React.useState("");
   const [password, onChangePassword] = React.useState("");
-  const [showLoggedIn, setShowLoggedIn] = React.useState(false);
+  const [loggedIn, onLogin] = React.useState(false);
 
   return (
-    <View style={styles.container}>
-      {!showLoggedIn && (
+    <ScrollView style={styles.container}>
+      <Text style={styles.headerText}>Welcome to Little Lemon</Text>
+
+      {loggedIn && <Text style={styles.headerText}>You are logged in</Text>}
+
+      {!loggedIn && (
         <>
+          <Text style={styles.regularText}>Login to continue</Text>
           <TextInput
             style={styles.input}
             placeholder="login"
@@ -22,22 +33,20 @@ export default function LoginPage() {
             placeholder="password"
             value={password}
             onChangeText={onChangePassword}
+            keyboardType="default"
             secureTextEntry={true}
           ></TextInput>
         </>
       )}
-      {showLoggedIn && (
-        <Text style={styles.infoSection}>You are logged in</Text>
-      )}
       <Pressable
         style={styles.loginButton}
         onPress={() => {
-          setShowLoggedIn(!showLoggedIn);
+          onLogin(!loggedIn);
         }}
       >
         <Text style={styles.loginButtonText}>Log in</Text>
       </Pressable>
-    </View>
+    </ScrollView>
   );
 }
 
@@ -69,12 +78,17 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 32,
   },
-  infoSection: {
+  headerText: {
+    padding: 40,
+    fontSize: 30,
+    color: "#EDEFEE",
+    textAlign: "center",
+  },
+  regularText: {
     fontSize: 24,
     padding: 20,
     marginVertical: 8,
     color: "#EDEFEE",
     textAlign: "center",
-    backgroundColor: "#495E57",
   },
 });
