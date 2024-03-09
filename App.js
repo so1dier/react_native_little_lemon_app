@@ -25,8 +25,8 @@ export default function App() {
       {/* {<FlatListMenuItems />} */}
       {/* {<MenuItemsFlatList />} */}
       {/* {<FeedbackForm />} */}
-      {/* {<LoginPage />} */}
-      {<MenuItemsSectionList />}
+      {<LoginPage />}
+      {/* {<MenuItemsSectionList />} */}
 
       <View style={{}}>
         <LittleLemonFooter />
