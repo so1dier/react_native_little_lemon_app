@@ -6,6 +6,7 @@ import {
   TextInput,
   KeyboardAvoidingView,
   Platform,
+  Image,
 } from "react-native";
 
 export default function WelcomeScreen() {
@@ -20,6 +21,10 @@ export default function WelcomeScreen() {
         indicatorStyle="white"
         keyboardDismissMode="on-drag"
       >
+        <Image
+          style={styles.logo}
+          source={require("../assets/littleLemonLogo.png")}
+        />
         <Text style={styles.headerText}>Welcome to Little Lemon</Text>
         <Text style={styles.bodyText}>
           Little Lemon is a charming neighborhood bistro that serves simple food
@@ -38,6 +43,11 @@ export default function WelcomeScreen() {
 }
 
 const styles = StyleSheet.create({
+  logo: {
+    height: 100,
+    width: 300,
+    resizeMode: "contain",
+  },
   scrollViewContainer: { flex: 1 },
   headerText: {
     fontSize: 40,

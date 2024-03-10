@@ -20,12 +20,12 @@ export default function App() {
       {/* <StatusBar style="auto" /> */}
       {/* <LittleLemonHeaderThreeLines /> */}
       <LittleLemonHeader />
-      {/* <WelcomeScreen /> */}
+      <WelcomeScreen />
       {/* <MenuItems /> */}
       {/* {<FlatListMenuItems />} */}
       {/* {<MenuItemsFlatList />} */}
       {/* {<FeedbackForm />} */}
-      {<LoginPage />}
+      {/* {<LoginPage />} */}
       {/* {<MenuItemsSectionList />} */}
 
       <View style={{}}>
