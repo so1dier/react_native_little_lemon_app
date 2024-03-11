@@ -5,6 +5,7 @@ import LittleLemonHeader from "./components/LittleLemonHeader";
 import LittleLemonFooter from "./components/LittleLemonFooter";
 import LittleLemonHeaderThreeLines from "./components/LittleLemonHeaderThreeLines";
 import WelcomeScreen from "./components/WelcomeScreen";
+import WelcomeScreen2 from "./components/WelcomeScreen2";
 import MenuItems from "./components/MenuItems";
 import FlatListMenuItems from "./components/FlatListMenuItems";
 import MenuItemsFlatList from "./components/MenuItemsFlatList";
@@ -20,7 +21,8 @@ export default function App() {
       {/* <StatusBar style="auto" /> */}
       {/* <LittleLemonHeaderThreeLines /> */}
       <LittleLemonHeader />
-      <WelcomeScreen />
+      {/* <WelcomeScreen /> */}
+      <WelcomeScreen2 />
       {/* <MenuItems /> */}
       {/* {<FlatListMenuItems />} */}
       {/* {<MenuItemsFlatList />} */}
