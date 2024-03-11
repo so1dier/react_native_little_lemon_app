@@ -1,4 +1,5 @@
 import {
+  View,
   ScrollView,
   Text,
   Image,
@@ -9,13 +10,14 @@ import {
 export default function WelcomeScreen2() {
   return (
     <ScrollView style={styles.container}>
-      <ImageBackground
-        style={styles.image}
-        source={require("../assets/littleLemonLogo2.png")}
-        resizeMode="contain"
-      >
+      <View style={styles.headerWrapper}>
+        <Image
+          style={styles.image}
+          source={require("../assets/littleLemonLogo2.png")}
+          resizeMode="contain"
+        />
         <Text style={styles.titleText}>Little Lemon</Text>
-      </ImageBackground>
+      </View>
       <Text style={styles.bodyText}>
         Little Lemon is a charming neighborhood bistro that serves simple food
         and classic coctails in a lively but casual environment. We would love
@@ -26,28 +28,27 @@ export default function WelcomeScreen2() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 24, marginTop: 25, backgroundColor: "#fff" },
+  container: { flex: 1 },
+  headerWrapper: { flexDirection: "row", justifyContent: "center", margin: 10 },
   image: {
-    flex: 1,
     height: 100,
-    width: 350,
-    borderRadius: 10,
-    justifyContent: "space-evenly",
-    alignContent: "",
+    width: 100,
+    borderRadius: 20,
   },
   titleText: {
-    marginTop: 16,
-    paddingVertical: 10,
-    color: "#333333",
-    textAlign: "right",
-    fontSize: 20,
-    fontWeight: "bold",
+    paddingRight: 10,
+    paddingLeft: 20,
+    paddingTop: 30,
+    paddingBottom: 10,
+    fontSize: 30,
+    color: "#EDEFEE",
+    textAlign: "center",
   },
   bodyText: {
-    marginTop: 16,
-    paddingVertical: 10,
-    color: "#333333",
+    marginVertical: 8,
+    padding: 20,
+    color: "#EDEFEE",
     textAlign: "center",
-    fontSize: 16,
+    fontSize: 24,
   },
 });
