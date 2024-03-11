@@ -6,17 +6,20 @@ import {
   StyleSheet,
   ImageBackground,
   useColorScheme,
+  useWindowDimensions,
 } from "react-native";
 
 export default function WelcomeScreen2() {
   const colorScheme = useColorScheme();
+  const window = useWindowDimensions();
+
   return (
     <ScrollView
       style={[
         styles.container,
-        // colorScheme === "light"
-        //   ? { backgroundColor: "#fff" }
-        //   : { backgroundColor: "#333333" },
+        colorScheme === "light"
+          ? { backgroundColor: "#fff" }
+          : { backgroundColor: "#333333" },
       ]}
     >
       <View style={styles.headerWrapper}>
@@ -24,15 +27,35 @@ export default function WelcomeScreen2() {
           style={styles.image}
           source={require("../assets/littleLemonLogo2.png")}
           resizeMode="cover"
+          accessible={true}
+          accessibilityLabel={"Little Lemon Logo"}
         />
-        <Text style={styles.titleText}>Little Lemon</Text>
+        <Text
+          style={[
+            styles.titleText,
+            colorScheme === "light"
+              ? { color: "#333333" }
+              : { color: "#EDEFEE" },
+          ]}
+        >
+          Little Lemon
+        </Text>
       </View>
-      <Text style={styles.bodyText}>
+      <Text
+        style={[
+          styles.bodyText,
+          colorScheme === "light" ? { color: "#333333" } : { color: "#EDEFEE" },
+        ]}
+      >
         Little Lemon is a charming neighborhood bistro that serves simple food
         and classic coctails in a lively but casual environment. We would love
         to hear your experience with us!
       </Text>
       <Text style={styles.regular}>Color Scheme: {colorScheme}</Text>
+      <Text style={styles.regular}>
+        Window dimensions. H:{window.height} W:{window.width} Font:
+        {window.fontScale}
+      </Text>
     </ScrollView>
   );
 }
