@@ -5,16 +5,25 @@ import {
   Image,
   StyleSheet,
   ImageBackground,
+  useColorScheme,
 } from "react-native";
 
 export default function WelcomeScreen2() {
+  const colorScheme = useColorScheme();
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView
+      style={[
+        styles.container,
+        // colorScheme === "light"
+        //   ? { backgroundColor: "#fff" }
+        //   : { backgroundColor: "#333333" },
+      ]}
+    >
       <View style={styles.headerWrapper}>
         <Image
           style={styles.image}
           source={require("../assets/littleLemonLogo2.png")}
-          resizeMode="contain"
+          resizeMode="cover"
         />
         <Text style={styles.titleText}>Little Lemon</Text>
       </View>
@@ -23,6 +32,7 @@ export default function WelcomeScreen2() {
         and classic coctails in a lively but casual environment. We would love
         to hear your experience with us!
       </Text>
+      <Text style={styles.regular}>Color Scheme: {colorScheme}</Text>
     </ScrollView>
   );
 }
