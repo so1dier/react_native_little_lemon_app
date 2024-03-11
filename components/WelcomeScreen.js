@@ -23,6 +23,7 @@ export default function WelcomeScreen() {
       >
         <Image
           style={styles.logo}
+          resizeMode="contain"
           source={require("../assets/littleLemonLogo.png")}
         />
         <Text style={styles.headerText}>Welcome to Little Lemon</Text>
@@ -31,6 +32,28 @@ export default function WelcomeScreen() {
           and classic cocktails in a lively but casual environment. We would
           love to hear more about your experience with us!
         </Text>
+
+        <Image
+          style={styles.image}
+          resizeMode="cover"
+          source={require("../assets/Picture1.png")}
+        />
+        <Image
+          style={styles.image}
+          resizeMode="contain"
+          source={require("../assets/Picture2.png")}
+        />
+        <Image
+          style={styles.image}
+          resizeMode="stretch"
+          source={require("../assets/Picture3.png")}
+        />
+        <Image
+          style={styles.image}
+          resizeMode="repeat"
+          source={require("../assets/Picture4.png")}
+        />
+
         <TextInput
           style={styles.input}
           input={name}
@@ -46,7 +69,11 @@ const styles = StyleSheet.create({
   logo: {
     height: 100,
     width: 300,
-    resizeMode: "contain",
+  },
+  image: {
+    width: 350,
+    height: 250,
+    borderRadius: 10,
   },
   scrollViewContainer: { flex: 1 },
   headerText: {
