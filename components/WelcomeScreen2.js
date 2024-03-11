@@ -8,10 +8,18 @@ import {
   useColorScheme,
   useWindowDimensions,
 } from "react-native";
+import {
+  useDeviceOrientation,
+  useAppState,
+  // useClipboard,
+} from "@react-native-community/hooks";
 
 export default function WelcomeScreen2() {
   const colorScheme = useColorScheme();
   const window = useWindowDimensions();
+  const orientation = useDeviceOrientation();
+  const appState = useAppState();
+  // const [data, setString] = useClipboard();
 
   return (
     <ScrollView
@@ -56,6 +64,20 @@ export default function WelcomeScreen2() {
         Window dimensions. H:{window.height} W:{window.width} Font:
         {window.fontScale}
       </Text>
+      <Text style={styles.regular}>
+        Orientation. Portrait: {orientation.portrait}, Landscape:{" "}
+        {orientation.landscape}
+      </Text>
+      <Text style={styles.regular}>appState: {appState}</Text>
+      {/* Does not work: */}
+      {/* <Text style={styles.regular}>Clipboard text: {data}</Text>
+      <Button
+        style={styles.button}
+        title="Update Clipboard"
+        onPress={() => setString("new clipboard data")}
+      >
+        SetClipboard
+      </Button> */}
     </ScrollView>
   );
 }
