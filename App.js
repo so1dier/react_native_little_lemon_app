@@ -1,5 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
 
 import LittleLemonHeader from "./components/LittleLemonHeader";
 import LittleLemonFooter from "./components/LittleLemonFooter";
@@ -16,24 +17,28 @@ import MenuItemsSectionList from "./components/MenuItemsSectionList";
 const black = "#333333";
 export default function App() {
   return (
-    //<View style={styles.container}>
-    <View style={{ flex: 1, backgroundColor: "#333333" }}>
-      {/* <StatusBar style="auto" /> */}
-      {/* <LittleLemonHeaderThreeLines /> */}
-      <LittleLemonHeader />
-      {/* <WelcomeScreen /> */}
-      <WelcomeScreen2 />
-      {/* <MenuItems /> */}
-      {/* {<FlatListMenuItems />} */}
-      {/* {<MenuItemsFlatList />} */}
-      {/* {<FeedbackForm />} */}
-      {/* {<LoginPage />} */}
-      {/* {<MenuItemsSectionList />} */}
+    <NavigationContainer>
+      {
+        //<View style={styles.container}>
+        <View style={{ flex: 1, backgroundColor: "#333333" }}>
+          {/* <StatusBar style="auto" /> */}
+          {/* <LittleLemonHeaderThreeLines /> */}
+          <LittleLemonHeader />
+          {/* <WelcomeScreen /> */}
+          <WelcomeScreen2 />
+          {/* <MenuItems /> */}
+          {/* {<FlatListMenuItems />} */}
+          {/* {<MenuItemsFlatList />} */}
+          {/* {<FeedbackForm />} */}
+          {/* {<LoginPage />} */}
+          {/* {<MenuItemsSectionList />} */}
 
-      <View style={{}}>
-        <LittleLemonFooter />
-      </View>
-    </View>
+          <View style={{}}>
+            <LittleLemonFooter />
+          </View>
+        </View>
+      }
+    </NavigationContainer>
   );
 }
 
