@@ -22,46 +22,55 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName="Menu"
-        screenOptions={{ headerStyle: { backgroundColor: "#FBDABB" } }}
-      >
-        <Stack.Screen name="Feedback" component={FeedbackForm} />
-        <Stack.Screen
-          name="Welcome"
-          component={WelcomeScreen}
-          options={{ title: "Home" }}
-        />
-        <Stack.Screen name="Menu" component={MenuItemsSectionList} />
-        {/* {
+      <View style={styles.container}>
+        <LittleLemonHeader />
+        <Stack.Navigator
+          initialRouteName="Login"
+          screenOptions={{ headerStyle: { backgroundColor: "#FBDABB" } }}
+        >
+          <Stack.Screen name="Login" component={LoginPage} />
+          <Stack.Screen
+            name="Welcome"
+            component={WelcomeScreen}
+            options={{ title: "Home" }}
+          />
+          <Stack.Screen name="Menu" component={MenuItemsSectionList} />
+          {/* {
           //<View style={styles.container}>
           <View style={{ flex: 1, backgroundColor: "#333333" }}>
             {/* <StatusBar style="auto" /> */}
-        {/* <LittleLemonHeaderThreeLines /> */}
-        {/* {<LittleLemonHeader />} */}
-        {/* <WelcomeScreen /> */}
-        {/* {<WelcomeScreen2 />} */}
-        {/* <MenuItems /> */}
-        {/* {<FlatListMenuItems />} */}
-        {/* {<MenuItemsFlatList />} */}
-        {/* {<FeedbackForm />} */}
-        {/* {<LoginPage />} */}
-        {/* {<MenuItemsSectionList />} */}
+          {/* <LittleLemonHeaderThreeLines /> */}
+          {/* {<LittleLemonHeader />} */}
+          {/* <WelcomeScreen /> */}
+          {/* {<WelcomeScreen2 />} */}
+          {/* <MenuItems /> */}
+          {/* {<FlatListMenuItems />} */}
+          {/* {<MenuItemsFlatList />} */}
+          {/* {<FeedbackForm />} */}
+          {/* {<LoginPage />} */}
+          {/* {<MenuItemsSectionList />} */}
 
-        {/* <View style={{}}>
+          {/* <View style={{}}>
               <LittleLemonFooter />
             </View>
           </View> */}
-      </Stack.Navigator>
+        </Stack.Navigator>
+      </View>
+      <View style={styles.footerContainer}>
+        <LittleLemonFooter />
+      </View>
     </NavigationContainer>
   );
 }
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: "#fff",
-//     alignItems: "center",
-//     justifyContent: "center",
-//   },
-// });
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#333333",
+    // alignItems: "center",
+    // justifyContent: "center",
+  },
+  footerContainer: {
+    backgroundColor: "#333333",
+  },
+});
