@@ -6,8 +6,9 @@ import {
   StyleSheet,
   Pressable,
 } from "react-native";
+import WelcomeScreen from "./WelcomeScreen";
 
-export default function LoginPage() {
+export default function LoginPage({ navigation }) {
   const [login, onChangeLogin] = React.useState("");
   const [password, onChangePassword] = React.useState("");
   const [loggedIn, onLogin] = React.useState(false);
@@ -41,7 +42,8 @@ export default function LoginPage() {
       <Pressable
         style={styles.loginButton}
         onPress={() => {
-          onLogin(!loggedIn);
+          // onLogin(!loggedIn);
+          navigation.navigate("Welcome");
         }}
       >
         <Text style={styles.loginButtonText}>Log in</Text>
@@ -53,6 +55,7 @@ export default function LoginPage() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#333333",
   },
   input: {
     height: 40,

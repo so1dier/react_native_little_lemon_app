@@ -35,54 +35,56 @@ function LogoTitle() {
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <View style={styles.container}>
-        {/* <LittleLemonHeader /> */}
-        <Stack.Navigator
-          initialRouteName="Welcome"
-          screenOptions={{
-            headerStyle: { backgroundColor: "#333333" },
-            headerTintColor: "#fff",
-            headerTitleStyle: {
-              fontWeight: "bold",
-            },
-          }}
-        >
-          <Stack.Screen name="Login" component={LoginPage} />
-          <Stack.Screen
-            name="Welcome"
-            component={WelcomeScreen}
-            options={{
-              title: "Home",
-              headerTitle: (props) => <LogoTitle {...props} />,
+    <>
+      <NavigationContainer>
+        <View style={styles.container}>
+          <LittleLemonHeader />
+          <Stack.Navigator
+            initialRouteName="Login"
+            screenOptions={{
+              headerStyle: { backgroundColor: "#333333" },
+              headerTintColor: "#fff",
+              headerTitleStyle: {
+                fontWeight: "bold",
+              },
             }}
-          />
-          <Stack.Screen name="Menu" component={MenuItemsSectionList} />
-          {/* {
+          >
+            <Stack.Screen name="Login" component={LoginPage} />
+            <Stack.Screen
+              name="Welcome"
+              component={WelcomeScreen}
+              options={{
+                title: "Home",
+                headerTitle: (props) => <LogoTitle {...props} />,
+              }}
+            />
+            <Stack.Screen name="Menu" component={MenuItemsSectionList} />
+            {/* {
           //<View style={styles.container}>
           <View style={{ flex: 1, backgroundColor: "#333333" }}>
             {/* <StatusBar style="auto" /> */}
-          {/* <LittleLemonHeaderThreeLines /> */}
-          {/* {<LittleLemonHeader />} */}
-          {/* <WelcomeScreen /> */}
-          {/* {<WelcomeScreen2 />} */}
-          {/* <MenuItems /> */}
-          {/* {<FlatListMenuItems />} */}
-          {/* {<MenuItemsFlatList />} */}
-          {/* {<FeedbackForm />} */}
-          {/* {<LoginPage />} */}
-          {/* {<MenuItemsSectionList />} */}
+            {/* <LittleLemonHeaderThreeLines /> */}
+            {/* {<LittleLemonHeader />} */}
+            {/* <WelcomeScreen /> */}
+            {/* {<WelcomeScreen2 />} */}
+            {/* <MenuItems /> */}
+            {/* {<FlatListMenuItems />} */}
+            {/* {<MenuItemsFlatList />} */}
+            {/* {<FeedbackForm />} */}
+            {/* {<LoginPage />} */}
+            {/* {<MenuItemsSectionList />} */}
 
-          {/* <View style={{}}>
+            {/* <View style={{}}>
               <LittleLemonFooter />
             </View>
           </View> */}
-        </Stack.Navigator>
-      </View>
-      <View style={styles.footerContainer}>
-        <LittleLemonFooter />
-      </View>
-    </NavigationContainer>
+          </Stack.Navigator>
+        </View>
+        <View style={styles.footerContainer}>
+          <LittleLemonFooter />
+        </View>
+      </NavigationContainer>
+    </>
   );
 }
 
