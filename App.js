@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Image } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
@@ -19,20 +19,43 @@ const black = "#333333";
 
 const Stack = createNativeStackNavigator();
 
+function LogoTitle() {
+  return (
+    <Image
+      source={require("./assets/littleLemonLogo2.png")}
+      style={{
+        height: 40,
+        width: 300,
+        resizeMode: "contain",
+        alignSelf: "center",
+      }}
+    />
+  );
+}
+
 export default function App() {
   return (
     <NavigationContainer>
       <View style={styles.container}>
-        <LittleLemonHeader />
+        {/* <LittleLemonHeader /> */}
         <Stack.Navigator
           initialRouteName="Welcome"
-          screenOptions={{ headerStyle: { backgroundColor: "#FBDABB" } }}
+          screenOptions={{
+            headerStyle: { backgroundColor: "#333333" },
+            headerTintColor: "#fff",
+            headerTitleStyle: {
+              fontWeight: "bold",
+            },
+          }}
         >
           <Stack.Screen name="Login" component={LoginPage} />
           <Stack.Screen
             name="Welcome"
             component={WelcomeScreen}
-            options={{ title: "Home" }}
+            options={{
+              title: "Home",
+              headerTitle: (props) => <LogoTitle {...props} />,
+            }}
           />
           <Stack.Screen name="Menu" component={MenuItemsSectionList} />
           {/* {

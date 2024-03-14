@@ -49,7 +49,7 @@ const Item = ({ name }) => (
   </View>
 );
 
-const MenuItems = () => {
+const MenuItems = ({ navigation }) => {
   const [showMenu, setShowMenu] = useState(false);
   const renderItem = ({ item }) => <Item name={item} />;
 
@@ -84,6 +84,9 @@ const MenuItems = () => {
           ItemSeparatorComponent={Separator}
         ></SectionList>
       )}
+      <Pressable onPress={() => navigation.goBack()}>
+        <Text style={menuStyles.buttonText}>Go Back</Text>
+      </Pressable>
     </View>
   );
 };
