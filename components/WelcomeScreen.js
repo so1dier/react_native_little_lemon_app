@@ -7,10 +7,12 @@ import {
   KeyboardAvoidingView,
   Platform,
   Image,
+  Pressable,
 } from "react-native";
 
-export default function WelcomeScreen() {
+export default function WelcomeScreen({ navigation }) {
   const [name, onChangeTextName] = useState("");
+
   return (
     <KeyboardAvoidingView
       style={styles.scrollViewContainer}
@@ -60,6 +62,9 @@ export default function WelcomeScreen() {
           onChangeText={onChangeTextName}
           placeholder={"First name"}
         ></TextInput>
+        <Pressable onPress={() => navigation.navigate("Menu")}>
+          <Text style={styles.buttonText}>View Menu</Text>
+        </Pressable>
       </ScrollView>
     </KeyboardAvoidingView>
   );
@@ -97,5 +102,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
     borderColor: "#EDEFEE",
     backgroundColor: "#F4CE14",
+  },
+  buttonText: {
+    color: "#333333",
+    textAlign: "center",
+    fontSize: 32,
   },
 });
