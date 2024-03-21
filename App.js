@@ -7,8 +7,14 @@ import { StyleSheet, Text, View, Image } from "react-native";
 //import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 //Tab navigation
-import { NavigationContainer } from "@react-navigation/native";
+import {
+  NavigationContainer,
+  getFocusedRouteNameFromRoute,
+} from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+
+//import { Ionicons } from "@expo/vector-icons";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 import LittleLemonHeader from "./components/LittleLemonHeader";
 import LittleLemonFooter from "./components/LittleLemonFooter";
@@ -26,14 +32,32 @@ const black = "#333333";
 
 // const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
+
 export default function App() {
   return (
-    <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Menu" component={MenuItemsSectionList} />
-        <Tab.Screen name="Welcome" component={WelcomeScreen2} />
-      </Tab.Navigator>
-    </NavigationContainer>
+    <>
+      <NavigationContainer>
+        <Tab.Navigator
+          screenOptions={({ route }) => ({
+            tabBarIcon: ({ focused, color, size }) => {
+              let iconName;
+
+              if (route.name === "Welcome") {
+                iconName = focused ? "beer" : "beer-outline";
+              } else if (route.name === "Menu") {
+                iconName = focused ? "airplane" : "airplane-outline";
+              }
+              return <Ionicons name={iconName} size={size} color={color} />;
+            },
+            tabBarActiveTintColor: "tomato",
+            tabBarInactiveTintColor: "gray",
+          })}
+        >
+          <Tab.Screen name="Menu" component={MenuItemsSectionList} />
+          <Tab.Screen name="Welcome" component={WelcomeScreen2} />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </>
   );
 }
 
