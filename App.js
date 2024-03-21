@@ -6,6 +6,10 @@ import { StyleSheet, Text, View, Image } from "react-native";
 //import { createNativeStackNavigator } from "@react-navigation/native-stack";
 //import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
+//Tab navigation
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+
 import LittleLemonHeader from "./components/LittleLemonHeader";
 import LittleLemonFooter from "./components/LittleLemonFooter";
 import LittleLemonHeaderThreeLines from "./components/LittleLemonHeaderThreeLines";
@@ -18,29 +22,35 @@ import FeedbackForm from "./components/FeedbackForm";
 import LoginPage from "./components/LoginPage";
 import MenuItemsSectionList from "./components/MenuItemsSectionList";
 
-//Tab navigation
-import { NavigationContainer } from "@react-navigation/native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-
 const black = "#333333";
 
 // const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
-
-function LogoTitle() {
+export default function App() {
   return (
-    <Image
-      source={require("./assets/littleLemonLogo2.png")}
-      style={{
-        height: 40,
-        width: 300,
-        resizeMode: "contain",
-        alignSelf: "center",
-      }}
-    />
+    <NavigationContainer>
+      <Tab.Navigator>
+        <Tab.Screen name="Menu" component={MenuItemsSectionList} />
+        <Tab.Screen name="Welcome" component={WelcomeScreen2} />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 }
 
+//function LogoTitle() {
+//  return (
+//    <Image
+//      source={require("./assets/littleLemonLogo2.png")}
+//      style={{
+//        height: 40,
+//        width: 300,
+//        resizeMode: "contain",
+//        alignSelf: "center",
+//      }}
+//    />
+//  );
+//}
+//
 //export default function App() {
 //  return (
 //    <>
@@ -107,14 +117,3 @@ function LogoTitle() {
 //    backgroundColor: "#333333",
 //  },
 //});
-
-export default function App() {
-  return (
-    <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Welcome" component={WelcomeSceen2} />
-        <Tab.Screen name="Menu" component={MenuScreen} />
-      </Tab.Navigator>
-    </NavigationContainer>
-  );
-}
