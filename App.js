@@ -7,11 +7,15 @@ import { StyleSheet, Text, View, Image } from "react-native";
 //import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 //Tab navigation
-import {
-  NavigationContainer,
-  getFocusedRouteNameFromRoute,
-} from "@react-navigation/native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+// import {
+//   NavigationContainer,
+//   getFocusedRouteNameFromRoute,
+// } from "@react-navigation/native";
+// import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+
+//Drawer navigation
+import { NavigationContainer } from "@react-navigation/native";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 
 //import { Ionicons } from "@expo/vector-icons";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -31,36 +35,51 @@ import MenuItemsSectionList from "./components/MenuItemsSectionList";
 const black = "#333333";
 
 // const Stack = createNativeStackNavigator();
-const Tab = createBottomTabNavigator();
+//const Tab = createBottomTabNavigator();
+const Drawer = createDrawerNavigator();
 
+//3. Drawer Navigation
 export default function App() {
   return (
-    <>
-      <NavigationContainer>
-        <Tab.Navigator
-          screenOptions={({ route }) => ({
-            tabBarIcon: ({ focused, color, size }) => {
-              let iconName;
-
-              if (route.name === "Welcome") {
-                iconName = focused ? "beer" : "beer-outline";
-              } else if (route.name === "Menu") {
-                iconName = focused ? "airplane" : "airplane-outline";
-              }
-              return <Ionicons name={iconName} size={size} color={color} />;
-            },
-            tabBarActiveTintColor: "tomato",
-            tabBarInactiveTintColor: "gray",
-          })}
-        >
-          <Tab.Screen name="Menu" component={MenuItemsSectionList} />
-          <Tab.Screen name="Welcome" component={WelcomeScreen2} />
-        </Tab.Navigator>
-      </NavigationContainer>
-    </>
+    <NavigationContainer>
+      <Drawer.Navigator useLegacyImplementation>
+        <Drawer.Screen name="Welcome" component={WelcomeScreen2} />
+        <Drawer.Screen name="Menu" component={MenuItemsSectionList} />
+      </Drawer.Navigator>
+    </NavigationContainer>
   );
 }
 
+//2. Bottom Tab Navigation
+//export default function App() {
+//  return (
+//    <>
+//      <NavigationContainer>
+//        <Tab.Navigator
+//          screenOptions={({ route }) => ({
+//            tabBarIcon: ({ focused, color, size }) => {
+//              let iconName;
+//
+//              if (route.name === "Welcome") {
+//                iconName = focused ? "beer" : "beer-outline";
+//              } else if (route.name === "Menu") {
+//                iconName = focused ? "airplane" : "airplane-outline";
+//              }
+//              return <Ionicons name={iconName} size={size} color={color} />;
+//            },
+//            tabBarActiveTintColor: "tomato",
+//            tabBarInactiveTintColor: "gray",
+//          })}
+//        >
+//          <Tab.Screen name="Menu" component={MenuItemsSectionList} />
+//          <Tab.Screen name="Welcome" component={WelcomeScreen2} />
+//        </Tab.Navigator>
+//      </NavigationContainer>
+//    </>
+//  );
+//}
+
+//1. Stack navigation
 //function LogoTitle() {
 //  return (
 //    <Image
@@ -141,3 +160,4 @@ export default function App() {
 //    backgroundColor: "#333333",
 //  },
 //});
+//
