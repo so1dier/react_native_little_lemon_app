@@ -3,15 +3,15 @@ import { StyleSheet, Text, View, Image } from "react-native";
 
 //Stack navigation
 //import { NavigationContainer } from "@react-navigation/native";
-//import { createNativeStackNavigator } from "@react-navigation/native-stack";
-//import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+// import { createNativeStackNavigator } from "@react-navigation/native-stack";
+// import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 //Tab navigation
-// import {
-//   NavigationContainer,
-//   getFocusedRouteNameFromRoute,
-// } from "@react-navigation/native";
-// import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+//import {
+//  NavigationContainer,
+//  getFocusedRouteNameFromRoute,
+//} from "@react-navigation/native";
+//import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 //Drawer navigation
 import { NavigationContainer } from "@react-navigation/native";
@@ -41,12 +41,20 @@ const Drawer = createDrawerNavigator();
 //3. Drawer Navigation
 export default function App() {
   return (
-    <NavigationContainer>
-      <Drawer.Navigator useLegacyImplementation>
-        <Drawer.Screen name="Welcome" component={WelcomeScreen2} />
-        <Drawer.Screen name="Menu" component={MenuItemsSectionList} />
-      </Drawer.Navigator>
-    </NavigationContainer>
+    <>
+      <NavigationContainer>
+        <View style={styles.container}>
+          <LittleLemonHeader />
+          <Drawer.Navigator initialRouteName="Login">
+            <Drawer.Screen name="Welcome" component={WelcomeScreen} />
+            <Drawer.Screen name="Login" component={LoginPage} />
+          </Drawer.Navigator>
+        </View>
+        <View style={styles.footerContainer}>
+          <LittleLemonFooter />
+        </View>
+      </NavigationContainer>
+    </>
   );
 }
 
@@ -149,15 +157,14 @@ export default function App() {
 //  );
 //}
 //
-//const styles = StyleSheet.create({
-//  container: {
-//    flex: 1,
-//    backgroundColor: "#333333",
-//    // alignItems: "center",
-//    // justifyContent: "center",
-//  },
-//  footerContainer: {
-//    backgroundColor: "#333333",
-//  },
-//});
-//
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#333333",
+    // alignItems: "center",
+    // justifyContent: "center",
+  },
+  footerContainer: {
+    backgroundColor: "#333333",
+  },
+});
