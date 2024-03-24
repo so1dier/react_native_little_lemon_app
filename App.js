@@ -45,7 +45,10 @@ export default function App() {
       <NavigationContainer>
         <View style={styles.container}>
           <LittleLemonHeader />
-          <Drawer.Navigator initialRouteName="Login">
+          <Drawer.Navigator
+            initialRouteName="Login"
+            screenOptions={{ drawerPosition: "right" }}
+          >
             <Drawer.Screen name="Welcome" component={WelcomeScreen} />
             <Drawer.Screen name="Login" component={LoginPage} />
           </Drawer.Navigator>
